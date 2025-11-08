@@ -1,2 +1,7 @@
 @import url(../vender/normalize.css);
-@import url("../vender/fonts.css");
+@import url(../vender/fonts.css);
+@import url(../blocks/card.css);
+@import url(../blocks/header.css);
+@import url(../blocks/menubar.css);
+@import url(../blocks/page.css);
+@import url(../blocks/footer.css);

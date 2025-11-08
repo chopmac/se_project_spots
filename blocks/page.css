@@ -1,4 +1,27 @@
+
+
 .page {
   background-color: #FCF5E5;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+
+}
+
+.menubar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__icon {
+  align-content: center;
+  justify-items: center;
+}
+
+.menu__text {
+  align-content: center;
+  justify-items: center;
 }
