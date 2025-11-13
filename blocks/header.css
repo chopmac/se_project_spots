@@ -1,159 +1,34 @@
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 14%;
-    width: 88%;
-    margin: 0 80px 40px 80px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #212121;
-    align-items: center;
-    justify-items: center;
-    justify-self: center;
-
-}
-
-@media screen and (max-width: 630px){
-    .header {
-        display: flex;
-        flex-direction: column;
-    }
-    
-}
-
-
-
-.avatar {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    width: 39%;
-    height: 90%;
-    
-}
-
-.header__avatar {
-    width: 37%;
-    height: 90%;
-    border-radius: 8%;
-
-}
-
-.header__contents {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 90%;
-}
-
-.header__content {
-    display: flex;
-    width: 83%;
-    flex-direction: column; 
-    
-    
-    
-}
-
-
-
-.header__name {
-    font-size: 32px;
-    font-weight: 500;
-    font-style: medium;
-    line-height: 100%;
-    letter-spacing: 0%;
-    margin: 0;
-
-}
-
-.header__description {
-    width: 38%;
-    height: 26%;
-    font-family: Poppins;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #212121;
-
-
-
-}
-
-.header__edit-button {
-    margin-top: 80px;
-    opacity: 0.7;
-    
-}
-
-
-.header__button-secondary {
-    background: none;
-    border: none;
-    gap: 8px;
-    display: flex;
-    color: #212121;
-    opacity: 0.5;
- 
-}
-
-.header__button-secondary:hover {
-    color: #212121;
-    opacity: 1;
-    cursor: pointer;
-}
-
-.header__button-icon {
-    opacity: 1;
-
-}
-
-.header__post {
-  width: 8%;
-  height: 100%;
-  opacity: 1;
-  padding-top: 18px;
-  padding-right: 32px;
-  padding-bottom: 18px;
-  padding-left: 32px;
-  gap: 8px;
-  border-radius: 8px;
-  
+.header { 
+  width: 100%;
+  height: 3%;
+  opacity: 1; 
+  border-bottom-width: 1px;
+  background: #FFFFFFCC; 
   display: flex;
-  flex-direction: row;
-}
-
-.header__post-button {
-display: flex;
-margin-left: auto;
-background: #212121;
-height: 100%;
-border-radius: 8px;
-background-color: #212121;
-font-family: "Poppins", Arial, Helvetica, sans-serif;
-font-weight: 500px;
-font-size: 16px;
-line-height: 100%;
-color: #fcf5e5;
-align-self: flex-end;
-gap: 8px;
-justify-content: center;
-align-items: center;
-flex-direction: row;
-}
-
-.header__post-button:hover {
-    background: #212121CC;
-    cursor: pointer;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px 0;
+  text-align: center;
 
 }
 
-
-.header__post-icon {
-
-width: 13%;
-height: 23%;
+.header__title {
+  width: 6%;
+  height: 1%;
+  opacity: 1; 
+  align-content: center;
+  justify-items: center;
 }
+
+.header__logo {
+  width: 94px;
+  height: 26px;
+  opacity: 1;
+  align-content: center;
+  justify-items: center;
+}
+
+
 

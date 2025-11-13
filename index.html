@@ -6,105 +6,99 @@
     <link rel="shortcut icon" href="favicon.ico"  >
     <link rel="stylesheet" href="./pages/index.css" >
 </head>
-   <body>
+   <body class="body">
   <div class="page">
-    <div class="menubar">
-      <img class="menu__icon"
-           src="favicon.ico"
-           alt="menu-icon">
-      <p class="menu__text">Spots</p>
-            
-    </div>
     <header class="header">
+  <h1 class="header__title">Spots</h1>
+  <img class="header__logo" 
+       src="favicon.ico" 
+       alt="Spots - Share your favorite places"
+       width="94" 
+       height="26">
+</header>
+            
+    
 
-      <div class="avatar">
-      <img  class="header__avatar" src="images/avatar.jpg" alt="image of Bessie Colman">
-      <div class="header__contents">
-       <div class="header__content">
-        <p class="header__name">Bessie Colman</p>
-        <p class="header__description">Civil Aviator</p>
-       </div>
-       <div class="header__edit-button">
-       
-        <button type="button"  class="header__button-secondary"><img class="header__button-icon"
-             src="Edit-Icon.png"
-             alt="edit icon">Edit Profile</button>
-       </div>
-       </div>
+      <section class="profile">
+       <img class="profile__avatar" src="./images/avatar.jpg" alt="Jacques Cousteau">
+       <div class="profile__info">
+       <h1 class="profile__name">Bessie Colman</h1>
+       <p class="profile__description">Civil Aviator</p>
+       <button class="profile__edit-button" type="button"><img class="profile__edit-icon" src="Edit-Icon.png" alt="edit icon">Edit Profile</button> 
       </div>
-      <div class="header__post">
+       <button class="profile__add-button"  type="button"><img class="profile__add-icon" src="Plus-icon.png" alt="plus icon">New Post</button>
+      </section>
+      
+      
        
-        <button type="button" class="header__post-button"> 
-          <img class="header__post-icon"
-             src="Plus-icon.png"
-             alt="Plus-icon">New Post</button>
+        
 
       </div>
-    </header>
+   
     
     <main class="content">
+     
       
-      <section class="cards">
-        <div class="cards__content">
-          <img class="cards__image"
+      <section class="cards"> 
+        <ul class="cards__list">
+        <li class="card">
+          <img class="card__image"
                src="images/1-photo-by-moritz-feldmann-from-pexels.jpg"
                alt="photo by moritz"><div class="card__content">
-          <p class="cards__text">Val Thorens</p> 
-                 
-            <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
-               </button>  </div>
-        </div>
-        <div class="cards__content">
-          <img class="cards__image"
+          <h2 class="card__text">Val Thorens</h2> 
+                  <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
+               </button> </div> </li>
+        
+        <li class="card">
+          <img class="card__image"
                src="images/2-photo-by-ceiline-from-pexels.jpg"
                alt="photo by ceiline"><div class="card__content">
-          <p class="cards__text">Restaurant terrace</p> 
-               
-          <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
-               </button>   </div>
-        </div>
-        <div class="cards__content">
-          <img class="cards__image"
+          <h2 class="card__text">Restaurant terrace</h2> 
+               <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
+               </button> </div>  </li>
+        
+        <li class="card">
+          <img class="card__image"
                src="images/3-photo-by-tubanur-dogan-from-pexels.jpg"
                alt="photo by moritz">
                    <div class="card__content">
-          <p class="cards__text">An outdoor cafe</p> 
-            <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
+          <h2 class="card__text">An outdoor cafe</h2> 
+            <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
                </button> </div>
-        </div>
-        <div class="cards__content">
-          <img class="cards__image"
+        </li>
+        <li class="card">
+          <img class="card__image"
                src="images/4-photo-by-maurice-laschet-from-pexels.jpg"
                alt="photo by moritz">
                <div class="card__content">
-          <p class="cards__text">A very long bridge, over the forest...</p> 
-             <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
+          <h2 class="card__text">A very long bridge, over the forest...</h2> 
+             <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
                </button> </div>
-        </div>
-        <div class="cards__content">
-          <img class="cards__image"
+              </li>
+        <li class="card">
+          <img class="card__image"
                src="images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
                alt="photo by moritz">
                <div class="card__content">
-          <p class="cards__text">Tunnel with morning light</p> 
-             <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
+          <h2 class="card__text">Tunnel with morning light</h2> 
+             <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
                </button> </div>
-        </div>
-        <div class="cards__content">
-          <img class="cards__image"
+              </li>
+        <li class="card">
+          <img class="card__image"
                src="images/6-photo-by-moritz-feldmann-from-pexels.jpg"
                alt="photo by moritz">
                <div class="card__content">
-          <p class="cards__text">Mountain house</p> 
-             <button type="button" class="cards__icon">
-                 <img src="Like-Icon.png" class="cards__icon-image" alt="like-icon"> 
+          <h2 class="card__text">Mountain house</h2> 
+             <button type="button" class="card__icon">
+                 <img src="Like-Icon.png" class="card__icon-image" alt="like-icon"> 
                </button> </div>
-        </div>
+              </li></ul>
           
         
       </section>

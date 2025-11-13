@@ -1,0 +1,110 @@
+@media screen and (max-width: 630px){
+    .profile {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 40px 0; 
+  align-items: center;
+    justify-self: center;
+    height: 14%;
+    width: 88%;
+    margin: 0 80px 40px 80px;
+   
+    border-bottom: 1px solid #212121;
+   
+    background-color: #fcf5e5;
+}
+
+.profile__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.profile__info {
+  flex-grow: 1;
+}
+
+.profile__name {
+  margin: 0 0 16px 0;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.profile__description {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.profile__edit-button {
+
+}
+
+
+
+
+.profile__edit-button:hover {
+    color: #212121;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.profile__edit-icon {
+    opacity: 1;
+
+}
+
+.profile__add-button{
+  
+  height: 100%;
+  opacity: 1;
+  padding-top: 18px;
+  padding-right: 32px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  
+  border-radius: 8px;
+  
+ 
+  flex-direction: row;
+
+display: flex;
+margin-left: auto;
+background: #212121;
+height: 100%;
+border-radius: 8px;
+background-color: #212121;
+font-family: "Poppins", Arial, Helvetica, sans-serif;
+font-weight: 500px;
+font-size: 16px;
+line-height: 100%;
+color: #fcf5e5;
+align-self: flex-end;
+gap: 8px;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+}
+
+.profile__add-button:hover {
+    background: #212121CC;
+    cursor: pointer;
+
+}
+
+
+.profile__add-icon {
+
+width: 13%;
+height: 23%;
+}
