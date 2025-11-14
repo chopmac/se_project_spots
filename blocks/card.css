@@ -1,13 +1,3 @@
-.content {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-   height: 66%; 
-   top: 310px;
-   
-  background: #FCF5E5;
-}
 
 .cards {
   display: flex;

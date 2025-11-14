@@ -1,5 +1,11 @@
 .content {
-  padding: auto;  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 66%; 
+   top: 310px;
+   padding: auto;  
+   background: #FCF5E5;
 }
-
 
