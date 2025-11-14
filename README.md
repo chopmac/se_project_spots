@@ -12,10 +12,13 @@ Spots is a responsive social media platform where users can share and discover b
 - Google Fonts (Poppins)
 
 ## Live Demo
-[View the live site here](https://yourusername.github.io/se_project-spots/)
+[View the live site here][def]
 
 ## Features
 - Responsive design that works on all screen sizes
 - Clean, modern user interface
 - Photo gallery with like functionality
 - User profile section
+
+
+[def]: https://github.com/chopmac/se_project_spots.git

@@ -14,17 +14,11 @@
 }
 
 
-@media screen and (max-width: 630px){
-    .profile {
-        display: flex;
-        flex-direction: column;
-    }
-}
 
 
 .profile__avatar {
-  width: 120px;
-  height: 120px;
+  width: 190px;
+  height: 190px;
   border-radius: 8%;
 }
 
@@ -76,7 +70,7 @@ height: 100%;
 border-radius: 8px;
 background-color: #212121;
 font-family: "Poppins", Arial, Helvetica, sans-serif;
-font-weight: 500px;
+font-weight: 500;
 font-size: 16px;
 line-height: 100%;
 color: #fcf5e5;
@@ -96,6 +90,13 @@ flex-direction: row;
 
 .profile__add-icon {
 
-width: 13%;
-height: 23%;
+width: 12px;
+height: 12px;
+}
+
+@media screen and (max-width: 630px){
+    .profile {
+        display: flex;
+        flex-direction: column;
+    }
 }
