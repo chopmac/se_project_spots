@@ -1,28 +1,16 @@
 .cards {
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  width: 89%;
-  height: 100%;
-  opacity: 1;
- 
-  border-bottom-width: 1px;
-  padding-bottom: 40px;
-  gap: 20px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  padding: 20px 0 40px;
   border-bottom: 1px solid #21212166;
-  justify-content: center;
-  align-content: center;
 }
 
 
 
 .cards__list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 413px);
+  gap: 40px 20px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 

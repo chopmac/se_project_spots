@@ -1,11 +1,6 @@
 .header { 
-  width: 1440px;
-  height: 46px;
-  opacity: 1; 
-  border-bottom-width: 1px;
-  background: #FFFFFFCC; 
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -18,9 +13,8 @@
 .header__logo {
   width: 94px;
   height: 26px;
-  opacity: 1;
-  align-content: center;
-  justify-items: center;
+  object-fit: contain;
+
 }
 
 
