@@ -9,8 +9,11 @@
 .cards__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 413px);
+  justify-content: center;
   gap: 40px 20px;
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;;
 }
 
 

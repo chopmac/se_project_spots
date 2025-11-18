@@ -1,12 +1,8 @@
 .header { 
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
   background-color: white;
   padding: 10px 0;
-  text-align: center;
-
 }
 
 

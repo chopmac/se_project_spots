@@ -1,8 +1,4 @@
 .content {
-   display: grid;
-   grid-template-columns:repeat(1fr 1fr 1fr);
-   flex-grow: 1;
-   flex-shrink: 0;
    padding: 0;
 }
 
