@@ -30,6 +30,6 @@
 }
   .cards__list {
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, 288px);
+    grid-template-columns: repeat(auto-fit, minmax 288px);
   }
 }

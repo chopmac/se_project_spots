@@ -13,6 +13,7 @@ Spots is a responsive social media platform where users can share and discover b
 
 ## Live Demo
 [View the live site here][def]
+unable to record video at this time
 
 ## Features
 - Responsive design that works on all screen sizes
