@@ -1,17 +1,12 @@
 .profile {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-   justify-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: center;
   padding: 34px 0 20px;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
   gap: 20px;
-  
 }
-
-
-
 
 .profile__avatar {
   width: 190px;
@@ -30,43 +25,58 @@
   margin: 0 0 6px 0;
   font-size: 32px;
   font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 300px;
 }
 
 .profile__description {
   margin: 0;
   font-size: 16px;
   opacity: 0.7;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 300px;
 }
 
-.profile__edit-button { 
-  background-color: transparent; 
+.profile__edit-button {
+  background-color: transparent;
   border: none;
-  margin-top: auto; 
-  padding: 0; 
+  margin-top: auto;
+  padding: 0;
   font-size: 16px;
-  font-weight: 500; 
-  color: #212121; 
-  opacity: 0.7; 
-  display: flex; 
-  gap: 8px; 
+  font-weight: 500;
+  color: #212121;
+  opacity: 0.7;
+  display: flex;
+  gap: 8px;
   cursor: pointer;
-
- }
-
+}
 
 .profile__edit-button:hover {
-    color: #212121;
-    opacity: 1;
-    cursor: pointer;
+  color: #212121;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .profile__edit-icon {
-    opacity: 1;
-
+  opacity: 1;
 }
 
-.profile__add-button{
-  
+.profile__add-button {
   height: 100%;
   opacity: 1;
   padding-top: 18px;
@@ -95,21 +105,18 @@
 }
 
 .profile__add-button:hover {
-    background: #212121CC;
-    cursor: pointer;
-
+  background: #212121cc;
+  cursor: pointer;
 }
 
-
 .profile__add-icon {
-
-width: 12px;
-height: 12px;
+  width: 12px;
+  height: 12px;
 }
 
 @media screen and (max-width: 630px) {
   .profile {
-    display: flex;
+    align-items: center;
     flex-direction: column;
     padding-top: 20px;
   }

@@ -17,12 +17,6 @@
 }
 
 
-@media screen and (max-width: 320px) {
-  .cards__list {
-    grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
-  }
-}
-
 
 @media screen and (max-width: 630px) {
     .cards {
@@ -30,6 +24,6 @@
 }
   .cards__list {
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax 288px);
+    grid-template-columns: repeat(auto-fit, 288px);
   }
 }
