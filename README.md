@@ -22,4 +22,4 @@ unable to record video at this time
 - User profile section
 
 
-[def]: https://github.com/chopmac/se_project_spots.git
+[def]: https://chopmac.github.io/se_project_spots/
