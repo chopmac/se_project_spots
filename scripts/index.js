@@ -9,7 +9,7 @@ const profileDescription = document.querySelector(".profile__description");
 const profileNameInput = editProfile.querySelector("#name");
 const profileDescriptionInput = editProfile.querySelector("#description");
 const imageLink = newPostModal.querySelector("#image-link");
-const imageText = newPosModalt.querySelector("#caption");
+const imageText = newPostModal.querySelector("#caption");
 
 editProfileBtn.addEventListener("click", function () {
   editProfile.classList.add("modal_is-opened");
