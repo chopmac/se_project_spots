@@ -7,13 +7,14 @@ const postCloseBtn = newPost.querySelector(".modal__close-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileNameInput = editProfile.querySelector("#name");
+const profileDescriptionInput = editProfile.querySelector("#description");
+const imageLink = newPost.getElementById("#image-link");
+const imageText = newPost.querySelector("#caption");
 const newName = profileNameInput.value;
 const newDescription = profileDescriptionInput.value;
 profileName.textContent = newName;
 profileDescription.textContent = newDescription;
-const profileDescriptionInput = editProfile.querySelector("#description");
-const imageLink = newPost.getElementById("#image-link");
-const imageText = newPost.querySelector("#caption");
+
 editProfileBtn.addEventListener("click", function () {
   editProfile.classList.add("modal_is-opened");
 });
