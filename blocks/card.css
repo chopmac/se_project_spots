@@ -12,6 +12,7 @@
   height: 413px;
   border-radius: 8px;
   margin-bottom: 12px;
+  object-fit: cover;
 
 }
 
@@ -38,6 +39,7 @@
   color: #212121;
   opacity: 0.4;
   background-color: transparent;
+  cursor: pointer;
 
 
 }

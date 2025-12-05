@@ -2,30 +2,30 @@ const editProfileBtn = document.querySelector(".profile__edit-button");
 const editProfile = document.querySelector("#edit-profile-modal");
 const profileCloseBtn = editProfile.querySelector(".modal__close-button");
 const newPostBtn = document.querySelector(".profile__add-button");
-const newPost = document.querySelector("#new-post-modal");
-const postCloseBtn = newPost.querySelector(".modal__close-button");
+const newPostModal = document.querySelector("#new-post-modal");
+const postCloseBtn = newPostModal.querySelector(".modal__close-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileNameInput = editProfile.querySelector("#name");
 const profileDescriptionInput = editProfile.querySelector("#description");
-const imageLink = newPost.querySelector("#image-link");
-const imageText = newPost.querySelector("#caption");
-const newName = profileNameInput.value;
-const newDescription = profileDescriptionInput.value;
-profileName.textContent = newName;
-profileDescription.textContent = newDescription;
+const imageLink = newPostModal.querySelector("#image-link");
+const imageText = newPosModalt.querySelector("#caption");
 
 editProfileBtn.addEventListener("click", function () {
   editProfile.classList.add("modal_is-opened");
+  const newName = profileNameInput.value;
+  const newDescription = profileDescriptionInput.value;
+  profileName.textContent = newName;
+  profileDescription.textContent = newDescription;
 });
 profileCloseBtn.addEventListener("click", function () {
   editProfile.classList.remove("modal_is-opened");
 });
 newPostBtn.addEventListener("click", function () {
-  newPost.classList.add("modal_is-opened");
+  newPostModal.classList.add("modal_is-opened");
 });
 postCloseBtn.addEventListener("click", function () {
-  newPost.classList.remove("modal_is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 });
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -35,18 +35,13 @@ function handleProfileFormSubmit(evt) {
 
 editProfile.addEventListener("submit", handleProfileFormSubmit);
 
-// Create the form submission handler.
-function newPostSubmit(evt) {
-  // Prevent default browser behavior.
+function handleNewPostModalSubmit(evt) {
   evt.preventDefault();
 
-  // Log both input values to the console.
-  console.log(newName);
-  console.log(newDescription);
+  console.log(imageLink.value);
+  console.log(imageText.value);
 
- 
-  addCardModal.classList.remove("modal_is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 }
 
-
-newPost.addEventListener("submit", newPostSubmit);
+newPostModal.addEventListener("submit", handleNewPostModalSubmit);
