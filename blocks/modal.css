@@ -65,7 +65,7 @@
   margin-bottom: 48px;
 }
 
-.save-button {
+.modal__save-button {
   width: 156px;
   height: 52px;
   border-radius: 8px;
@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 
-.save-button:hover {
+.modal__save-button:hover {
   cursor: pointer;
   opacity: 0.5;
 }
@@ -92,7 +92,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  background-image:url(image/Close-Icon.svg) ;
+  background-image:url(../images/Close-Icon.svg);
 }
 
 .modal__close-button:hover {

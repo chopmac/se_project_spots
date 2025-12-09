@@ -13,10 +13,7 @@ const imageText = newPostModal.querySelector("#caption");
 
 editProfileBtn.addEventListener("click", function () {
   editProfile.classList.add("modal_is-opened");
-  const newName = profileNameInput.value;
-  const newDescription = profileDescriptionInput.value;
-  profileName.textContent = newName;
-  profileDescription.textContent = newDescription;
+ 
 });
 profileCloseBtn.addEventListener("click", function () {
   editProfile.classList.remove("modal_is-opened");
@@ -31,6 +28,10 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
   editProfile.classList.remove("modal_is-opened");
+   const newName = profileNameInput.value;
+  const newDescription = profileDescriptionInput.value;
+  profileName.textContent = newName;
+  profileDescription.textContent = newDescription;
 }
 
 editProfile.addEventListener("submit", handleProfileFormSubmit);
