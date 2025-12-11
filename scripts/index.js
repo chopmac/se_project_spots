@@ -28,7 +28,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
   editProfile.classList.remove("modal_is-opened");
-   const newName = profileNameInput.value;
+  const newName = profileNameInput.value;
   const newDescription = profileDescriptionInput.value;
   profileName.textContent = newName;
   profileDescription.textContent = newDescription;
