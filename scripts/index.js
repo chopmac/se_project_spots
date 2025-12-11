@@ -11,18 +11,28 @@ const profileDescriptionInput = editProfile.querySelector("#description");
 const imageLink = newPostModal.querySelector("#image-link");
 const imageText = newPostModal.querySelector("#caption");
 
-editProfileBtn.addEventListener("click", function () {
-  editProfile.classList.add("modal_is-opened");
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}  
+
+editProfileBtn.addEventListener("click", function () { 
+  profileNameInput.value = profileName.textContent;
+  profileDescriptionInput.value = profileDescription.textContent;
+  openModal(editProfile)
  
 });
 profileCloseBtn.addEventListener("click", function () {
-  editProfile.classList.remove("modal_is-opened");
+  closeModal(editProfile)
 });
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+  openModal(newPostModal)
 });
 postCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal)
 });
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();

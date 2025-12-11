@@ -162,12 +162,10 @@
 
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <div class="modal__row">
             <button type="button" class="modal__close-button" ></button>
             <h3 class="modal__title">Edit Profile</h3>
-          </div>
           <form class="modal__form" name="edit-profile">
-            <label for="name">Name</label>
+            <label for="name" class="modal__label">Name</label>
             <input
               type="text"
               class="modal__input"
@@ -175,7 +173,7 @@
               name="name"
               placeholder="Type your name"
             />
-            <label for="description">Description</label>
+            <label for="description"  class="modal__label">Description</label>
             <input
               type="text"
               id="description"
@@ -190,12 +188,10 @@
 
       <div class="modal" id="new-post-modal">
         <div class="modal__container">
-          <div class="modal__row">
-            <button type="button" class="modal__close-button">x</button>
+            <button type="button" class="modal__close-button"></button>
             <h3 class="modal__title">New post</h3>
-          </div>
           <form class="modal__form" name="add-card">
-            <label for="image-link">image-link</label>
+            <label for="image-link" class="modal__label">image-link</label>
             <input
               type="text"
               id="image-link"
@@ -203,7 +199,7 @@
               name="image-link"
               placeholder="Paste a link to the picture"
             />
-            <label for="caption">Caption</label>
+            <label for="caption" class="modal__label">Caption</label>
             <input
               type="text"
               id="caption"
@@ -211,7 +207,7 @@
               name="caption"
               placeholder="Type your caption"
             />
-            <button type="submit" class="save-button">Save</button>
+            <button type="submit" class="modal__save-button">Save</button>
           </form>
         </div>
       </div>
