@@ -105,4 +105,17 @@
     font-size: 16px;
     margin-bottom: 24px;
   }
+  .modal__title {
+    font-size: 20px;
+  }
+  .modal__close-button {
+    top: 12px;
+    right: 12px;
+  }
+  .modal__form {
+    margin-top: 34px;
+  }
+  .modal__save-button {
+    width: unset;
+  }
 }
