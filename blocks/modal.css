@@ -98,7 +98,6 @@
 
 @media screen and (max-width: 768px) {
   .modal__container {
-    width: 282px;
     padding: 22px 12px 12px;
   }
   .modal__input {
