@@ -86,6 +86,27 @@
   background-image: url(../images/delete-hover.svg);
 }
 
+
+.card__list {
+  display: grid;
+  grid-template-columns: repeat(3, 430px);
+  justify-content: center;
+  gap: 40px 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 630px) {
+  .cards {
+    padding-bottom: 20px;
+  }
+  .card__list {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
+}
+
 @media screen and (max-width: 630px) {
   .card__image {
     width: 288px;
