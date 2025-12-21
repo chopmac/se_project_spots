@@ -8,8 +8,14 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileNameInput = editProfile.querySelector("#name");
 const profileDescriptionInput = editProfile.querySelector("#description");
-const imageLink = newPostModal.querySelector("#image-link");
-const imageText = newPostModal.querySelector("#caption");
+const cardTemplate = document.querySelector("#card__template");
+const cardContainer = document.querySelector("#cards-list");
+const nameInput = newPostModal.querySelector("#caption");
+const linkInput = newPostModal.querySelector("#image-link");
+const previewImageModal = document.querySelector("#preview-image-modal");
+const modalImage = previewImageModal.querySelector(".modal__image");
+const modalCaption = previewImageModal.querySelector(".modal__caption");
+const modalCloseButton = previewImageModal.querySelector(".modal__close-button");
 const initialCards = [
   {
     name: "Val Thorens",
@@ -34,18 +40,63 @@ const initialCards = [
   {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"
-  }
+  }];
 
 
-];
+
+  function getCardElement(data) {
+  const cardElement = cardTemplate.content.cloneNode(true);
+
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__text");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+
+   const likeButton = cardElement.querySelector(".card__like-btn");
+
+
+  likeButton.addEventListener('click', function() {
+    likeButton.classList.toggle('card__like-btn_is-active');
+  });
+
+  const deleteButton = cardElement.querySelector(".card__delete-button");
+  deleteButton.addEventListener('click', function() {
+    const card = deleteButton.closest('.card');
+    card.remove();
+  });
+
+    cardImage.addEventListener('click', function() {
+
+    modalImage.src = data.link;
+    modalImage.alt = data.name;
+    modalCaption.textContent = data.name;
+
+
+    openModal(previewImageModal);
+  });
+
+  modalCloseButton.addEventListener('click', function() {
+    closeModal(previewImageModal);
+  });
+  return cardElement;
+};
+
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardContainer.prepend(cardElement);
+});
+
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-}
+};
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-}
+};
 
 editProfileBtn.addEventListener("click", function () {
   profileNameInput.value = profileName.textContent;
@@ -69,23 +120,46 @@ function handleProfileFormSubmit(evt) {
   const newDescription = profileDescriptionInput.value;
   profileName.textContent = newName;
   profileDescription.textContent = newDescription;
-}
+};
 
 editProfile.addEventListener("submit", handleProfileFormSubmit);
-
 function handleNewPostModalSubmit(evt) {
   evt.preventDefault();
 
-  console.log(imageLink.value);
-  console.log(imageText.value);
+ const nameValue = nameInput.value;
+  const linkValue = linkInput.value;
+
+
+const newCardData = {
+  name: nameValue,
+  link: linkValue
+};
+
+
+const newCard = getCardElement(newCardData);
+
+
+cardContainer.prepend(newCard);
+
 
   closeModal(newPostModal);
-}
+  return newCard;
+};
 
 newPostModal.addEventListener("submit", handleNewPostModalSubmit);
 
 
-console.log("Logging card names:");
+
+
+
+
+
+
+
+
+
+
+console.log("Logging card names:"),
 initialCards.forEach(card => {
   console.log(card.name);
 });

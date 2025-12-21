@@ -96,6 +96,12 @@
   margin-bottom: 32px;
 }
 
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
 @media screen and (max-width: 768px) {
   .modal__container {
     padding: 22px 12px 12px;

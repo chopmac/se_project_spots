@@ -44,110 +44,23 @@
           </button>
         </section>
 
-        <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="photo by moritz"
-              />
-              <div class="card__content">
-                <h2 class="card__text">Val Thorens</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
-              </div>
-            </li>
+      <ul class="cards__list" id="cards-list"></ul>
+      <template id="card__template">
 
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="photo by ceiline"
-              />
-              <div class="card__content">
-                <h2 class="card__text">Restaurant terrace</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
-              </div>
-            </li>
+  <li class="card">
+    <button class="card__delete-button" type="button"></button>
+    <img class="card__image" src="" alt="">
 
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="photo by moritz"
-              />
-              <div class="card__content">
-                <h2 class="card__text">An outdoor cafe</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="photo by moritz"
-              />
-              <div class="card__content">
-                <h2 class="card__text">A very long bridge, over the forest</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="photo by moritz"
-              />
-              <div class="card__content">
-                <h2 class="card__text">Tunnel with morning light</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                src="images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="photo by moritz"
-              />
-              <div class="card__content">
-                <h2 class="card__text">Mountain house</h2>
-                <button type="button" class="card__like-btn">
-                  <img
-                    src="./images/Like-Icon.svg"
-                    class="card__icon-image"
-                    alt="like-icon"
-                  />
-                </button>
+    <div class="card__content">
+      <h2 class="card__text"></h2>
+     <button type="button" class="card__like-btn">
+                  </button>
+    </div>
+  </li>
+
+</template>
+
+
               </div>
             </li>
           </ul>
@@ -214,6 +127,13 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="preview-image-modal">
+  <div class="modal__container">
+    <button class="modal__close-button" type="button"></button>
+    <img class="modal__image" src="" alt="" />
+    <p class="modal__caption"></p>
+  </div>
+</div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
