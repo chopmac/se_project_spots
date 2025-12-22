@@ -63,6 +63,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  opacity: 1;
 }
 
 .card__like-btn_is-active:hover {
@@ -96,7 +97,8 @@
   height: 32px;
   opacity: 1;
   top: 10px;
-  left: 371px;
+  right: 10px;
+  z-index: 1;
 }
 
 .card__delete-button:hover {

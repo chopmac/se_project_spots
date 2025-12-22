@@ -137,7 +137,7 @@ function handleNewPostModalSubmit(evt) {
   }
   const cardData = { name: nameValue, link: linkValue };
   const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
+  cardContainer.prepend(cardElement);
   const newCard = getCardElement(newCardData);
 
   cardContainer.prepend(newCard);
