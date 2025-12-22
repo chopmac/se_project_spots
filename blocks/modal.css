@@ -102,6 +102,23 @@
   object-fit: contain;
 }
 
+.modal__caption {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 10px 0 0 0;
+  text-align: left;
+  max-width: 80vw;
+}
+
+@media screen and (max-width: 627px) {
+  .modal__caption {
+    font-size: 12px;
+    margin: 8px 0 0 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .modal__container {
     padding: 22px 12px 12px;

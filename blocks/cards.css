@@ -3,12 +3,11 @@
   padding: 20px 0 40px;
   border-bottom: 1px solid #21212166;
   display: grid;
-  grid-template-columns: repeat(3, 430px);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 430px));
   justify-content: center;
   gap: 40px 20px;
   list-style-type: none;
   margin: 0;
-  padding: 0;
 }
 
 @media screen and (max-width: 630px) {

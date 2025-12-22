@@ -67,7 +67,6 @@
 .profile__edit-button:hover {
   color: #212121;
   opacity: 1;
-  cursor: pointer;
 }
 
 .profile__edit-icon {
@@ -87,8 +86,6 @@
   margin-left: auto;
   background: #212121;
   height: 100%;
-  border-radius: 8px;
-  background-color: #212121;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -98,7 +95,6 @@
   gap: 8px;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   cursor: pointer;
 }
 

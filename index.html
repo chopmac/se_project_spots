@@ -42,9 +42,12 @@
               alt="plus icon"
             />New Post
           </button>
+
         </section>
 
-      <ul class="cards" id="card-list"></ul>
+      <section class="page__section">
+  <ul class="cards" id="card-list"></ul>
+</section>
       <template id="card__template">
 
   <li class="card">
@@ -61,9 +64,7 @@
 </template>
 
 
-              </div>
-            </li>
-          </ul>
+
         </section>
       </main>
 
@@ -84,6 +85,7 @@
                 id="name"
                 name="name"
                 placeholder="Type your name"
+                required
             /></label>
             <label for="description" class="modal__label"
               >Description
@@ -93,6 +95,7 @@
                 class="modal__input"
                 name="description"
                 placeholder="Describe yourself"
+                required
             /></label>
             <button type="submit" class="modal__save-button">Save</button>
           </form>
@@ -107,11 +110,12 @@
             <label for="image-link" class="modal__label"
               >image-link
               <input
-                type="text"
+                type="url"
                 id="image-link"
                 class="modal__input"
                 name="image-link"
                 placeholder="Paste a link to the picture"
+                required
             /></label>
             <label for="caption" class="modal__label"
               >Caption
@@ -121,6 +125,7 @@
                 class="modal__input"
                 name="caption"
                 placeholder="Type your caption"
+                required
             /></label>
             <button type="submit" class="modal__save-button">Save</button>
           </form>
@@ -130,7 +135,7 @@
     <div class="modal" id="preview-image-modal">
   <div class="modal__container">
     <button class="modal__close-button" type="button"></button>
-    <img class="modal__image" src="" alt="" />
+    <img class="modal__image" src="#" alt="" />
     <p class="modal__caption"></p>
   </div>
 </div>
