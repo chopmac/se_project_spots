@@ -138,14 +138,12 @@ function handleNewPostModalSubmit(evt) {
   const cardData = { name: nameValue, link: linkValue };
   const cardElement = getCardElement(cardData);
   cardContainer.prepend(cardElement);
-  const newCard = getCardElement(newCardData);
 
-  cardContainer.prepend(newCard);
 
   newPostModal.querySelector(".modal__form").reset();
   closeModal(newPostModal);
 
-  return newCard;
+
 }
 
 newPostModal.addEventListener("submit", handleNewPostModalSubmit);

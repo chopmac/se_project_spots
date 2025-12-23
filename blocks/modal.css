@@ -130,7 +130,7 @@
   width: 40px;
   height: 40px;
   top: 0px;
-  left: 580px;
+  right: -40px;
   opacity: 1;
   background-image: url(../images/Close-icon_preview.svg);
   cursor: pointer;
@@ -168,5 +168,9 @@
   }
   .modal__image {
     max-width: none;
+  }
+  .modal__close-button_type_preview {
+    right: 0;
+    top: -40px;
   }
 }
