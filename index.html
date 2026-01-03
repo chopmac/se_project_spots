@@ -86,7 +86,9 @@
                 name="name"
                 placeholder="Type your name"
                 required
-            /></label>
+                minlength="2"
+                  maxlength="40"
+            /><span id="name-error" class="modal__error">incorrect name format</span></label>
             <label for="description" class="modal__label"
               >Description
               <input
@@ -96,7 +98,9 @@
                 name="description"
                 placeholder="Describe yourself"
                 required
-            /></label>
+                minlength="2"
+                  maxlength="200"
+            /><span id="description-error" class="modal__error">incorrect description format</span></label>
             <button type="submit" class="modal__save-button">Save</button>
           </form>
         </div>
@@ -116,7 +120,7 @@
                 name="image-link"
                 placeholder="Paste a link to the picture"
                 required
-            /></label>
+            /><span id="image-link-error" class="modal__error">incorrect image link format</span></label>
             <label for="caption" class="modal__label"
               >Caption
               <input
@@ -126,7 +130,10 @@
                 name="caption"
                 placeholder="Type your caption"
                 required
-            /></label>
+                minlength="2"
+                  maxlength="30"
+            /><span id="caption-error" class="modal__error">incorrect caption format</span>
+            </label>
             <button type="submit" class="modal__save-button">Save</button>
           </form>
         </div>

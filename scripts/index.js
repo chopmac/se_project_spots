@@ -18,8 +18,17 @@ const modalCaption = previewImageModal.querySelector(".modal__caption");
 const modalCloseButton = previewImageModal.querySelector(
   ".modal__close-button"
 );
+const modals = document.querySelectorAll(".modal");
+import {
+  enableValidation,
+  hideInputError,
+  toggleButtonState,
+} from "./validation.js";
+import { settings } from "./settings.js";
+
 modalCloseButton.addEventListener("click", function () {
   closeModal(previewImageModal);
+
 });
 const initialCards = [
   {
@@ -86,17 +95,40 @@ initialCards.forEach((cardData) => {
   cardContainer.prepend(cardElement);
 });
 
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscape);
 }
-
 editProfileBtn.addEventListener("click", function () {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+
+
+  const profileInputs = [profileNameInput, profileDescriptionInput];
+  const profileSubmitButton = editProfile.querySelector(".modal__button");
+  const profileForm = editProfile.querySelector(".modal__form");
+
+  profileInputs.forEach((inputElement) => {
+    const errorElement = editProfile.querySelector(`#${inputElement.id}-error`);
+    hideInputError(profileForm, inputElement, errorElement, settings);
+  });
+
+  toggleButtonState(profileInputs, profileSubmitButton, settings);
+
   openModal(editProfile);
 });
 profileCloseBtn.addEventListener("click", function () {
@@ -125,28 +157,36 @@ function handleNewPostModalSubmit(evt) {
   const nameValue = nameInput.value;
   const linkValue = linkInput.value;
 
-  const newCardData = {
-    name: nameValue,
-    link: linkValue,
-  };
-  try {
-    new URL(linkValue);
-  } catch (error) {
-    alert("Please enter a valid URL for the image link");
-    return;
-  }
   const cardData = { name: nameValue, link: linkValue };
   const cardElement = getCardElement(cardData);
   cardContainer.prepend(cardElement);
 
 
-  newPostModal.querySelector(".modal__form").reset();
+  const postForm = newPostModal.querySelector(".modal__form");
+  postForm.reset();
+
+
+  const postSubmitButton = newPostModal.querySelector(".modal__button");
+  const postInputs = [nameInput, linkInput];
+  toggleButtonState(postInputs, postSubmitButton, settings);
+
   closeModal(newPostModal);
-
-
 }
 
+
+
+
+
 newPostModal.addEventListener("submit", handleNewPostModalSubmit);
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+
+    if (evt.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
+});
 
 console.log("Logging card names:"),
   initialCards.forEach((card) => {
