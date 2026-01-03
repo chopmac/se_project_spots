@@ -24,7 +24,7 @@ import {
   hideInputError,
   toggleButtonState,
 } from "./validation.js";
-import { settings } from "./settings.js";
+import { config } from "./validation.js";
 
 modalCloseButton.addEventListener("click", function () {
   closeModal(previewImageModal);
@@ -119,7 +119,7 @@ editProfileBtn.addEventListener("click", function () {
 
 
   const profileInputs = [profileNameInput, profileDescriptionInput];
-  const profileSubmitButton = editProfile.querySelector(".modal__button");
+  const profileSubmitButton = editProfile.querySelector(".modal__save-button");
   const profileForm = editProfile.querySelector(".modal__form");
 
   profileInputs.forEach((inputElement) => {
@@ -166,7 +166,7 @@ function handleNewPostModalSubmit(evt) {
   postForm.reset();
 
 
-  const postSubmitButton = newPostModal.querySelector(".modal__button");
+  const postSubmitButton = newPostModal.querySelector(".modal__save-button");
   const postInputs = [nameInput, linkInput];
   toggleButtonState(postInputs, postSubmitButton, settings);
 
