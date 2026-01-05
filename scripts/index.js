@@ -124,10 +124,10 @@ editProfileBtn.addEventListener("click", function () {
 
   profileInputs.forEach((inputElement) => {
     const errorElement = editProfile.querySelector(`#${inputElement.id}-error`);
-    hideInputError(profileForm, inputElement, errorElement, settings);
+    hideInputError(profileForm, inputElement, errorElement, config);
   });
 
-  toggleButtonState(profileInputs, profileSubmitButton, settings);
+  toggleButtonState(profileInputs, profileSubmitButton, config);
 
   openModal(editProfile);
 });
@@ -168,7 +168,7 @@ function handleNewPostModalSubmit(evt) {
 
   const postSubmitButton = newPostModal.querySelector(".modal__save-button");
   const postInputs = [nameInput, linkInput];
-  toggleButtonState(postInputs, postSubmitButton, settings);
+  toggleButtonState(postInputs, postSubmitButton, config);
 
   closeModal(newPostModal);
 }
@@ -181,6 +181,24 @@ newPostModal.addEventListener("submit", handleNewPostModalSubmit);
 
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
+addCard(
+  { name: postTitle, link: postImageLink },
+  cardsContainer,
+  "#card-template"
+);
+
+newPostModalForm.reset();
+
+const postInputs = [newPostTitleInput, newPostImageInput];
+const postSubmitButton = newPostModal.querySelector(".modal__save-button");
+const postForm = newPostModal.querySelector(".modal__form");
+
+postInputs.forEach((inputElement) => {
+  const errorElement = newPostModal.querySelector(`#${inputElement.id}-error`);
+  hideInputError(postForm, inputElement, errorElement, config);
+});
+
+toggleButtonState(postInputs, postSubmitButton, config);
 
     if (evt.target.classList.contains("modal")) {
       closeModal(modal);
