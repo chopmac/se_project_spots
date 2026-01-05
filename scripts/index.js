@@ -181,32 +181,11 @@ newPostModal.addEventListener("submit", handleNewPostModalSubmit);
 
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
-addCard(
-  { name: postTitle, link: postImageLink },
-  cardsContainer,
-  "#card-template"
-);
-
-newPostModalForm.reset();
-
-const postInputs = [newPostTitleInput, newPostImageInput];
-const postSubmitButton = newPostModal.querySelector(".modal__save-button");
-const postForm = newPostModal.querySelector(".modal__form");
-
-postInputs.forEach((inputElement) => {
-  const errorElement = newPostModal.querySelector(`#${inputElement.id}-error`);
-  hideInputError(postForm, inputElement, errorElement, config);
-});
-
-toggleButtonState(postInputs, postSubmitButton, config);
-
     if (evt.target.classList.contains("modal")) {
       closeModal(modal);
     }
   });
 });
-
-console.log("Logging card names:"),
   initialCards.forEach((card) => {
     console.log(card.name);
   });

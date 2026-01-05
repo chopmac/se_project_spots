@@ -99,8 +99,3 @@ function resetValidation(formElement, config) {
 
   toggleButtonState(inputList, buttonElement, config);
 }
-
-
-const postTitle = newPostTitleInput.value;
-const postImageLink = newPostImageInput.value;
-
