@@ -104,21 +104,3 @@ function resetValidation(formElement, config) {
 const postTitle = newPostTitleInput.value;
 const postImageLink = newPostImageInput.value;
 
-addCard(
-  { name: postTitle, link: postImageLink },
-  cardsContainer,
-  "#card-template"
-);
-
-newPostModalForm.reset();
-
-const postInputs = [newPostTitleInput, newPostImageInput];
-const postSubmitButton = newPostModal.querySelector(".modal__save-button");
-const postForm = newPostModal.querySelector(".modal__form");
-
-postInputs.forEach((inputElement) => {
-  const errorElement = newPostModal.querySelector(`#${inputElement.id}-error`);
-  hideInputError(postForm, inputElement, errorElement, config);
-});
-
-toggleButtonState(postInputs, postSubmitButton, config);
