@@ -189,3 +189,4 @@ modals.forEach((modal) => {
   initialCards.forEach((card) => {
     console.log(card.name);
   });
+  enableValidation(config);
