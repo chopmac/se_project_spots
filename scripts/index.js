@@ -1,6 +1,7 @@
 const editProfileBtn = document.querySelector(".profile__edit-button");
 const editProfile = document.querySelector("#edit-profile-modal");
-const profileCloseBtn = editProfile.querySelector(".modal__close-button");
+const profileForm = editProfile.querySelector(".modal__form");
+const closeButtons = editProfile.querySelectorAll(".modal__close-button");
 const newPostBtn = document.querySelector(".profile__add-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const postCloseBtn = newPostModal.querySelector(".modal__close-button");
@@ -19,6 +20,8 @@ const modalCloseButton = previewImageModal.querySelector(
   ".modal__close-button"
 );
 const modals = document.querySelectorAll(".modal");
+const postForm = newPostModal.querySelector(".modal__form");
+
 import {
   enableValidation,
   hideInputError,
@@ -28,7 +31,6 @@ import { config } from "./validation.js";
 
 modalCloseButton.addEventListener("click", function () {
   closeModal(previewImageModal);
-
 });
 const initialCards = [
   {
@@ -117,10 +119,8 @@ editProfileBtn.addEventListener("click", function () {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 
-
   const profileInputs = [profileNameInput, profileDescriptionInput];
   const profileSubmitButton = editProfile.querySelector(".modal__save-button");
-  const profileForm = editProfile.querySelector(".modal__form");
 
   profileInputs.forEach((inputElement) => {
     const errorElement = editProfile.querySelector(`#${inputElement.id}-error`);
@@ -131,8 +131,9 @@ editProfileBtn.addEventListener("click", function () {
 
   openModal(editProfile);
 });
-profileCloseBtn.addEventListener("click", function () {
-  closeModal(editProfile);
+closeButtons.forEach((button) => {
+  const modal = button.closest('.modal');
+  button.addEventListener('click', () => closeModal(modal));
 });
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
@@ -150,7 +151,7 @@ function handleProfileFormSubmit(evt) {
   profileDescription.textContent = newDescription;
 }
 
-editProfile.addEventListener("submit", handleProfileFormSubmit);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 function handleNewPostModalSubmit(evt) {
   evt.preventDefault();
 
@@ -162,22 +163,16 @@ function handleNewPostModalSubmit(evt) {
   cardContainer.prepend(cardElement);
 
 
-  const postForm = newPostModal.querySelector(".modal__form");
   postForm.reset();
 
-
-  const postSubmitButton = newPostModal.querySelector(".modal__save-button");
+  const postSubmitButton = evt.submitter;
   const postInputs = [nameInput, linkInput];
   toggleButtonState(postInputs, postSubmitButton, config);
 
   closeModal(newPostModal);
 }
 
-
-
-
-
-newPostModal.addEventListener("submit", handleNewPostModalSubmit);
+postForm.addEventListener("submit", handleNewPostModalSubmit);
 
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (evt) => {
@@ -186,7 +181,5 @@ modals.forEach((modal) => {
     }
   });
 });
-  initialCards.forEach((card) => {
-    console.log(card.name);
-  });
-  enableValidation(config);
+
+enableValidation(config);
