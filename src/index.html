@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spots - Photo Gallery</title>
+    <link rel="shortcut icon" href="._favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header">
+        <img
+          class="header__logo"
+          src="images/Logo.svg"
+          alt="Spots - Share your favorite places"
+        />
+      </header>
+
+      <main class="content">
+        <section class="profile page__section">
+          <img
+            class="profile__avatar"
+            src="./images/Avatar.svg"
+            alt="Bessie Colman"
+          />
+          <div class="profile__info">
+            <h1 class="profile__name">Bessie Colman</h1>
+            <p class="profile__description">Civil Aviator</p>
+            <button class="profile__edit-button" type="button">
+              <img
+                class="profile__edit-icon"
+                src="./images/Edit-Icon.svg"
+                alt="edit icon"
+              />Edit Profile
+            </button>
+          </div>
+          <button class="profile__add-button" type="button">
+            <img
+              class="profile__add-icon"
+              src="./images/Plus-icon.svg"
+              alt="plus icon"
+            />New Post
+          </button>
+
+        </section>
+
+      <section class="page__section">
+  <ul class="cards" id="card-list"></ul>
+</section>
+      <template id="card__template">
+
+  <li class="card">
+    <button class="card__delete-button" type="button"></button>
+    <img class="card__image" src="" alt="">
+
+    <div class="card__content">
+      <h2 class="card__text"></h2>
+     <button type="button" class="card__like-btn">
+                  </button>
+    </div>
+  </li>
+
+</template>
+
+
+
+      </main>
+
+      <footer class="footer page__section">
+        <p class="footer__text">2023 © Spots</p>
+      </footer>
+
+      <div class="modal" id="edit-profile-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-button"></button>
+          <h3 class="modal__title">Edit Profile</h3>
+          <form class="modal__form" name="edit-profile">
+            <label for="name" class="modal__label"
+              >Name
+              <input
+                type="text"
+                class="modal__input"
+                id="name"
+                name="name"
+                placeholder="Type your name"
+                required
+                minlength="2"
+                  maxlength="40"
+            /><span id="name-error" class="modal__error"></span></label>
+            <label for="description" class="modal__label"
+              >Description
+              <input
+                type="text"
+                id="description"
+                class="modal__input"
+                name="description"
+                placeholder="Describe yourself"
+                required
+                minlength="2"
+                  maxlength="200"
+            /><span id="description-error" class="modal__error"></span></label>
+            <button type="submit" class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-button"></button>
+          <h3 class="modal__title">New post</h3>
+          <form class="modal__form" name="add-card">
+            <label for="image-link" class="modal__label"
+              >image-link
+              <input
+                type="url"
+                id="image-link"
+                class="modal__input"
+                name="image-link"
+                placeholder="Paste a link to the picture"
+                required
+            /><span id="image-link-error" class="modal__error"></span></label>
+            <label for="caption" class="modal__label"
+              >Caption
+              <input
+                type="text"
+                id="caption"
+                class="modal__input"
+                name="caption"
+                placeholder="Type your caption"
+                required
+                minlength="2"
+                  maxlength="30"
+            /><span id="caption-error" class="modal__error"></span>
+            </label>
+            <button type="submit" class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+   <div class="modal modal_type_preview" id="preview-image-modal">
+  <div class="modal__preview-container">
+   <button class="modal__close-button modal__close-button_type_preview" type="button"></button>
+    <img class="modal__image" src="#" alt="" />
+    <p class="modal__caption"></p>
+  </div>
+</div>
+    <script type="module" src="./pages/index.js"></script>
+  </body>
+</html>
