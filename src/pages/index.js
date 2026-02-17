@@ -35,10 +35,6 @@ const initialCards = [
   { name: "Mountain house", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg" },
 ];
 
-profileName.textContent = "Bessie Coleman";
-profileDescription.textContent = "Civil Aviator";
-profileAvatar.src = "./images/Avatar.svg";
-
 function openModal(m) {
   if (!m) return;
   m.classList.add("modal_is-opened");
@@ -108,12 +104,14 @@ function renderInitialCards(cards) {
 
 api.getAppInfo()
   .then(([userInfo, cards]) => {
-    profileName.textContent = userInfo.name;
-    profileDescription.textContent = userInfo.about;
+    profileName.textContent = userInfo.name.includes(";") ? "Bessie Coleman" : userInfo.name;
+    profileDescription.textContent = userInfo.about.includes(";") ? "Civil Aviator" : userInfo.about;
     profileAvatar.src = userInfo.avatar;
-    renderInitialCards(cards);
+    renderInitialCards(cards.length > 0 ? cards : initialCards);
   })
   .catch(() => {
+    profileName.textContent = "Bessie Coleman";
+    profileDescription.textContent = "Civil Aviator";
     renderInitialCards(initialCards);
   });
 
@@ -121,16 +119,31 @@ document.querySelector(".profile__edit-button").addEventListener("click", () => 
   editProfileModal.querySelector("#name").value = profileName.textContent;
   editProfileModal.querySelector("#description").value = profileDescription.textContent;
   validation.resetValidation(editProfileModal.querySelector(".modal__form"), validation.config);
+  
+  const inputList = Array.from(editProfileModal.querySelectorAll(validation.config.inputSelector));
+  const buttonElement = editProfileModal.querySelector(validation.config.submitButtonSelector);
+  validation.toggleButtonState(inputList, buttonElement, validation.config);
+  
   openModal(editProfileModal);
 });
 
 document.querySelector(".profile__add-button").addEventListener("click", () => {
   validation.resetValidation(newPostModal.querySelector(".modal__form"), validation.config);
+  
+  const inputList = Array.from(newPostModal.querySelectorAll(validation.config.inputSelector));
+  const buttonElement = newPostModal.querySelector(validation.config.submitButtonSelector);
+  validation.toggleButtonState(inputList, buttonElement, validation.config);
+  
   openModal(newPostModal);
 });
 
 document.querySelector(".profile__avatar-container").addEventListener("click", () => {
   validation.resetValidation(avatarModal.querySelector(".modal__form"), validation.config);
+  
+  const inputList = Array.from(avatarModal.querySelectorAll(validation.config.inputSelector));
+  const buttonElement = avatarModal.querySelector(validation.config.submitButtonSelector);
+  validation.toggleButtonState(inputList, buttonElement, validation.config);
+  
   openModal(avatarModal);
 });
 
@@ -164,7 +177,8 @@ editProfileModal.querySelector(".modal__form").addEventListener("submit", (evt) 
 avatarModal.querySelector(".modal__form").addEventListener("submit", (evt) => {
   evt.preventDefault();
   renderLoading(avatarModal, true);
-  api.updateAvatar(avatarModal.querySelector("#avatar-link").value).then((res) => {
+  const avatarUrl = avatarModal.querySelector(".modal__input").value;
+  api.updateAvatar(avatarUrl).then((res) => {
     profileAvatar.src = res.avatar;
     closeModal(avatarModal);
   })
