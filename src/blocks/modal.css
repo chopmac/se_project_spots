@@ -44,6 +44,7 @@
   align-items: center;
   width: auto;
   border-radius: 0;
+  position: relative;
 }
 
 .modal__title {
@@ -179,12 +180,13 @@
 }
 
 .modal__container_type_preview .modal__close-button {
-  top: -40px;
-  right: 0;
-  background-color: transparent;
+  top: 16px;
+  right: 16px;
+  background-color: #fff;
+  border-radius: 50%;
   background-image: url('../images/Close-Icon.svg');
-  background-size: contain;
-  filter: brightness(0) invert(1);
+  background-size: 16px;
+  filter: none;
   opacity: 1;
 }
 
@@ -200,7 +202,9 @@
   }
 
   .modal__container_type_preview .modal__close-button {
-    top: -35px;
-    right: 0;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
   }
 }
