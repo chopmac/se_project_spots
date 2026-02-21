@@ -1,5 +1,6 @@
 import validation from "../scripts/validation.js";
 import Api from "../utils/Api.js";
+import "./index.css"; 
 
 const cardContainer = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
