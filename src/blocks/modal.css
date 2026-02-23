@@ -9,7 +9,6 @@
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s;
   z-index: 1111;
-  padding: 0 10px;
 }
 
 .modal_is-opened {
@@ -20,7 +19,7 @@
 .modal__container {
   max-width: 430px;
   width: 100%;
-  background-color: #fff;
+  background-color: #fcf5e5;
   border-radius: 10px;
   position: relative;
   padding: 34px 36px;
@@ -33,42 +32,42 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: relative;
+  margin-bottom: 30px;
+}
+
+.modal__label-text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #000;
+  opacity: 0.7;
+}
+
+.modal__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+}
+
+.modal__input:focus {
+  border-bottom: 1px solid #212121;
 }
 
 .modal__error {
   color: #FF0000;
   font-size: 12px;
   line-height: 15px;
-  margin: -25px 0 15px;
+  margin: 5px 0 0;
   min-height: 15px;
   visibility: hidden;
 }
 
 .modal__error_visible {
   visibility: visible;
-}
-
-.modal__input_type_error {
-  border-bottom: 1px solid #FF0000 !important;
-}
-
-.modal_type_delete .modal__container {
-  max-width: 430px;
-  min-height: 172px;
-  padding: 32px 36px;
-  align-items: center;
-}
-
-.modal__container_type_preview {
-  background-color: transparent;
-  max-width: 75vw;
-  max-height: 75vh;
-  padding: 0;
-  align-items: center;
-  width: auto;
-  border-radius: 0;
-  position: relative;
 }
 
 .modal__title {
@@ -83,15 +82,6 @@
   flex-direction: column;
 }
 
-.modal__input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 8px 0;
-  margin-bottom: 30px;
-  font-size: 14px;
-}
-
 .modal__save-button {
   width: 100%;
   height: 50px;
@@ -101,17 +91,19 @@
   border-radius: 2px;
   font-size: 18px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
   margin-top: 18px;
 }
 
-.modal__save-button_disabled {
-  background-color: #fff;
+.modal__cancel-button {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
   color: #000;
-  border: 1px solid #000;
-  opacity: 0.2;
-  cursor: not-allowed;
-  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 12px;
 }
 
 .modal__close-button {
@@ -123,84 +115,46 @@
   background: transparent url('../images/Close-Icon.svg') center no-repeat;
   border: none;
   cursor: pointer;
-  z-index: 10;
-  transition: opacity 0.2s ease;
 }
 
-.modal__container .modal__close-button {
-  top: 16px;
-  right: 16px;
+.modal__container_type_preview {
+  background-color: transparent;
+  max-width: 75vw;
+  padding: 0;
+  border-radius: 0;
+  width: auto;
 }
 
 .modal__container_type_preview .modal__close-button {
   top: -35px;
   right: -35px;
-  background-image: url('../images/Close-Icon.svg');
-  background-size: contain;
 }
 
 .modal__image {
-  max-width: 90vw;
-  max-height: 80vh;
+  max-width: 100%;
+  max-height: 75vh;
   object-fit: contain;
   display: block;
 }
 
 .modal__caption {
-  margin: 10px 0 0;
   color: #fff;
+  margin: 10px 0 0;
   font-size: 12px;
-  line-height: 15px;
   align-self: flex-start;
-  font-family: "Inter", Arial, sans-serif;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 630px) {
   .modal__container {
     width: calc(100% - 38px);
     padding: 25px 22px;
   }
 
-  .modal__title {
-    font-size: 18px;
-    line-height: 22px;
-    margin-bottom: 75px;
-  }
-
-  .modal__input {
-    font-size: 14px;
-    margin-bottom: 45px;
-  }
-
-  .modal__save-button {
-    font-size: 14px;
-    height: 46px;
-    margin-top: 0;
-  }
-
   .modal__close-button {
-    width: 26px;
-    height: 26px;
     top: -36px;
     right: 0;
-    background-size: 26px;
-  }
-
-  .modal__container_type_preview .modal__close-button {
-    top: -30px;
-    right: 0;
-  }
-
-  .modal__container_type_preview {
-    max-width: 100%;
-  }
-
-  .modal__image {
-    max-width: 100%;
-  }
-
-  .modal__caption {
-    font-size: 12px;
-    line-height: 15px;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
   }
 }

@@ -2,6 +2,12 @@ import validation from "../scripts/validation.js";
 import Api from "../utils/Api.js";
 import "./index.css"; 
 
+import "../images/Like-Icon.svg";
+import "../images/edit-icon.svg";
+import "../images/Plus-icon.svg";
+import "../images/Logo.svg";
+
+
 const cardContainer = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 const profileName = document.querySelector(".profile__name");
@@ -23,7 +29,7 @@ const postNameInput = newPostForm.querySelector("input[name='name']");
 const postLinkInput = newPostForm.querySelector("input[name='link']");
 
 const deleteModal = document.querySelector("#delete-modal");
-const deleteConfirmBtn = deleteModal.querySelector(".modal__button_type_confirm");
+const deleteForm = deleteModal.querySelector(".modal__form");
 
 const previewModal = document.querySelector("#preview-image-modal");
 const previewImage = previewModal.querySelector(".modal__image");
@@ -31,7 +37,7 @@ const previewCaption = previewModal.querySelector(".modal__caption");
 
 const profileEditBtn = document.querySelector(".profile__edit-button");
 const profileAddBtn = document.querySelector(".profile__add-button");
-const avatarEditBtn = document.querySelector(".profile__avatar-container");
+const avatarEditBtn = document.querySelector(".profile__avatar-edit-button");
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -68,7 +74,7 @@ function renderLoading(isLoading, button, buttonText = "Save", loadingText = "Sa
 
 function handleSubmit(request, evt, loadingText = "Saving...") {
   evt.preventDefault();
-  const submitButton = evt.submitter;
+  const submitButton = evt.submitter || evt.target.querySelector(".modal__save-button");
   const initialText = submitButton.textContent;
   
   renderLoading(true, submitButton, initialText, loadingText);
@@ -152,7 +158,7 @@ avatarEditBtn.addEventListener("click", () => {
 });
 
 editProfileForm.addEventListener("submit", (evt) => {
-  function makeRequest() {
+  const makeRequest = () => {
     return api.setUserInfo({
       name: nameInput.value,
       about: descriptionInput.value
@@ -160,49 +166,47 @@ editProfileForm.addEventListener("submit", (evt) => {
       profileName.textContent = res.name;
       profileDescription.textContent = res.about;
     });
-  }
+  };
   handleSubmit(makeRequest, evt);
 });
 
 avatarForm.addEventListener("submit", (evt) => {
-  function makeRequest() {
+  const makeRequest = () => {
     return api.updateAvatar(avatarInput.value).then((res) => {
       profileAvatar.src = res.avatar;
     });
-  }
+  };
   handleSubmit(makeRequest, evt);
 });
 
 newPostForm.addEventListener("submit", (evt) => {
-  function makeRequest() {
+  const makeRequest = () => {
     return api.addCard({
       name: postNameInput.value,
       link: postLinkInput.value
     }).then((res) => {
       cardContainer.prepend(getCardElement(res));
     });
-  }
+  };
   handleSubmit(makeRequest, evt, "Creating...");
 });
 
-deleteConfirmBtn.addEventListener("click", () => {
+deleteForm.addEventListener("submit", (evt) => {
   if (cardToDelete) {
-    const initialText = deleteConfirmBtn.textContent;
-    renderLoading(true, deleteConfirmBtn, initialText, "Deleting...");
-    api.deleteCard(cardToDelete.id)
-      .then(() => {
-        cardToDelete.element.remove();
-        closeModal(deleteModal);
-        cardToDelete = null;
-      })
-      .catch(console.error)
-      .finally(() => renderLoading(false, deleteConfirmBtn, initialText));
+    const makeRequest = () => {
+      return api.deleteCard(cardToDelete.id)
+        .then(() => {
+          cardToDelete.element.remove();
+          cardToDelete = null;
+        });
+    };
+    handleSubmit(makeRequest, evt, "Deleting...");
   }
 });
 
 document.querySelectorAll(".modal").forEach(m => {
   m.addEventListener("mousedown", (e) => {
-    if (e.target === m || e.target.classList.contains("modal__close-button") || e.target.classList.contains("modal__button_type_cancel")) {
+    if (e.target === m || e.target.classList.contains("modal__close-button") || e.target.classList.contains("modal__cancel-button")) {
       closeModal(m);
     }
   });

@@ -16,13 +16,14 @@
       <main class="content">
         <section class="profile">
           <div class="profile__avatar-container">
-            <img src="" alt="Profile Avatar" class="profile__avatar" />
+            <img src="./images/Avatar.svg" alt="Profile Avatar" class="profile__avatar" />
+            <button class="profile__avatar-edit-button" type="button"></button>
           </div>
           <div class="profile__info">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button class="profile__edit-button" type="button">
-              <img src="./images/Edit-Icon.svg" alt="Edit Profile" />
+              <img src="./images/edit-icon.svg" alt="Edit Profile" />
               Edit Profile
             </button>
           </div>
@@ -48,6 +49,7 @@
         <h2 class="modal__title">Edit profile</h2>
         <form class="modal__form" name="edit-profile">
           <label class="modal__label">
+            <span class="modal__label-text">Name</span>
             <input
               type="text"
               id="name"
@@ -61,6 +63,7 @@
             <span class="modal__error" id="name-error"></span>
           </label>
           <label class="modal__label">
+            <span class="modal__label-text">Description</span>
             <input
               type="text"
               id="description"
@@ -84,6 +87,7 @@
         <h2 class="modal__title">New post</h2>
         <form class="modal__form" name="add-card">
           <label class="modal__label">
+            <span class="modal__label-text">Image link</span>
             <input
               type="url"
               id="card-link"
@@ -95,6 +99,7 @@
             <span class="modal__error" id="card-link-error"></span>
           </label>
           <label class="modal__label">
+            <span class="modal__label-text">Caption</span>
             <input
               type="text"
               id="card-name"
@@ -112,20 +117,23 @@
       </div>
     </div>
 
-    <div class="modal" id="delete-modal">
+   <div class="modal" id="delete-modal">
       <div class="modal__container">
         <button class="modal__close-button" type="button"></button>
-        <h2 class="modal__title">Are you sure?</h2>
-        <div class="modal__buttons">
-          <button class="modal__button_type_confirm" type="button">Yes</button>
-        </div>
+        <h2 class="modal__title modal__title_type_delete">Are you sure?</h2>
+        <form class="modal__form" name="delete-card">
+          <div class="modal__buttons">
+            <button class="modal__save-button" type="submit">Yes</button>
+            <button class="modal__button_type_cancel" type="button">No</button>
+          </div>
+        </form>
       </div>
     </div>
 
     <div class="modal" id="preview-image-modal">
       <div class="modal__container modal__container_type_preview">
-        <button class="modal__close-button" type="button"></button>
-        <img src="" alt="" class="modal__image" />
+        <button class="modal__close-button modal__close-button_type_preview" type="button"></button>
+        <img src="./images/Logo.svg" alt="" class="modal__image" />
         <p class="modal__caption"></p>
       </div>
     </div>
@@ -136,6 +144,7 @@
         <h2 class="modal__title">Change profile picture</h2>
         <form class="modal__form" name="edit-avatar">
           <label class="modal__label">
+            <span class="modal__label-text">Avatar link</span>
             <input
               type="url"
               id="avatar-link"
@@ -154,7 +163,7 @@
     <template id="card-template">
       <li class="card">
         <button class="card__delete-button" type="button"></button>
-        <img src="" alt="" class="card__image" />
+        <img src="./images/Logo.svg" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__text"></h2>
           <button class="card__like-btn" type="button"></button>
