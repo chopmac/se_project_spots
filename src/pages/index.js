@@ -29,7 +29,8 @@ const postNameInput = newPostForm.querySelector("input[name='name']");
 const postLinkInput = newPostForm.querySelector("input[name='link']");
 
 const deleteModal = document.querySelector("#delete-modal");
-const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteForm = deleteModal.querySelector(".modal__form_type_delete"); 
+const cancelDeleteButton = deleteModal.querySelector(".modal__button_type_cancel");
 
 const previewModal = document.querySelector("#preview-image-modal");
 const previewImage = previewModal.querySelector(".modal__image");
@@ -203,6 +204,11 @@ deleteForm.addEventListener("submit", (evt) => {
     handleSubmit(makeRequest, evt, "Deleting...");
   }
 });
+
+cancelDeleteButton.addEventListener("click", () => {
+  closeModal(deleteModal); 
+});
+
 
 document.querySelectorAll(".modal").forEach(m => {
   m.addEventListener("mousedown", (e) => {
